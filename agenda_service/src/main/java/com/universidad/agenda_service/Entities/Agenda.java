@@ -24,5 +24,11 @@ public class Agenda {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long usuarioId;
+    private String titulo;
     private String descripcion;
+
+    public void setUsuarioId(Long usuarioId) {
+        this.usuarioId = usuarioId;
+    }
+
 }

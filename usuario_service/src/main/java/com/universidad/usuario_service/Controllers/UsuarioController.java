@@ -29,18 +29,11 @@ public class UsuarioController {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
- 
-    @GetMapping("/usuario/{id}")
-    public String /* <Usuario> */ getObtnerUsuario(@PathVariable Long id) {
-        Usuario usuario = new Usuario();
-        return usuario.getEmail();
-    }
-
     // Crear un nuevo usuario
     @PostMapping("/usuario")
     public ResponseEntity<Usuario> crearUsuario(@RequestBody Usuario usuario) {
-        
         Usuario nuevoUsuario = usuarioRepository.save(usuario);
+        //usuario.setFechaCreacion(new Date());
         return new ResponseEntity<>(nuevoUsuario, HttpStatus.CREATED);
     }
 

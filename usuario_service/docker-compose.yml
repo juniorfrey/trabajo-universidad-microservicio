@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  # Servicio de MySQL
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: universidad
+      MYSQL_DATABASE: usuarios_db
+      MYSQL_USER: universidad
+      MYSQL_PASSWORD: universidad
+    ports:
+      - "3307:3306"  # Cambia el puerto local a 3307

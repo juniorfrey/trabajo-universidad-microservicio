@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  # Base de datos para Microservicio 1
+  db1:
+    image: mysql:8.0
+    container_name: mysql-container1
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: usuarios_bd
+      MYSQL_USER: root
+      MYSQL_PASSWORD: universidad
+    ports:
+      - "3306:3306"

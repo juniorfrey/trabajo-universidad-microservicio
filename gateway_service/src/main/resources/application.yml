@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: usuario-service
+          uri: lb://usuario-service
+          predicates:
+            - Path=/usuarios/**
+        - id: agenda-service
+          uri: lb://agenda-service
+          predicates:
+            - Path=/agenda/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
